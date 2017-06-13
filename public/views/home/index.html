@@ -1,0 +1,38 @@
+<h1>Upload A New Pill</h1>
+
+<form name="imageUploadForm" novalidate>
+  <div class="form-group">
+    <label for="genericName">Generic Name</label>
+    <input type="text" class="form-control" placeholder="Enter drug generic name" ng-model="uploadData.genericName">
+  </div>
+  <div class="form-group">
+    <label for="brandName">Brand Name</label>
+    <input type="text" class="form-control" placeholder="Enter drug brand name" ng-model="uploadData.brandName">
+  </div>
+  <div class="form-group">
+    <label for="streetNames">Street Names</label>
+    <input type="text" class="form-control" placeholder="Enter street names" ng-model="uploadData.streetNames">
+  </div>
+  <div class="form-group">
+    <label for="pillClass">Classification</label>
+    <select name="pillClass" class="form-control" ng-model="pillClass" ng-options="pillClass for pillClass in pillClasses">
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" class="form-control" placeholder="Enter a brief description of drug/uses/side effects" ng-model="description" rows="2">
+    </textarea>
+  </div>
+  <div class="form-group">
+    <label for="image1">Image 1 (Front)</label>
+    <input class="form-control" type="file" name="file" file-model="uploadData.file">
+  </div>
+  <!-- <div class="form-group">
+    <label for="image2">Image 2 (Back)</label>
+    <input class="form-control" type="file" name="image2" file-model="uploadData.image2">
+  </div> -->
+  <button type="submit" class="btn btn-success btn-block" ng-click="Submit()">Submit</button>
+  <button type="button" class="btn btn-primary btn-block" ng-click="createDirectory()">Create Directory</button>
+  <button type="button" class="btn btn-primary btn-block" ng-click="getAvailableDirectories()">Get Directory List</button>
+
+</form>
