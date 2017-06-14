@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var fs = require('fs');
+var isValidPath = require('is-valid-path');
 
 // config image upload options using multer
 var multer = require('multer');
@@ -20,7 +21,8 @@ var upload = multer({
   storage: storage
 });
 
-var appRoutes = require('./app/routes/api')(router, upload, fs);
+// define api and dependencies
+var appRoutes = require('./app/routes/api')(router, upload, fs, isValidPath);
 
 // middleware
 app.use(logger('dev'));
