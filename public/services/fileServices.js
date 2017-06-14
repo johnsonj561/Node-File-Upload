@@ -6,14 +6,14 @@ myApp.factory('FileService', ['$http', function ($http) {
    * Create new directory in /uploads/
    */
   fileFactory.createDirectory = function (dirName) {
-    return $http.post('/api/createDir/' + dirName);
+    return $http.post('/api/createDir', dirName);
   };
 
   /*
    * Get list of available directories found at path
    */
-  fileFactory.getAvailableDirectories = function (path) {
-    return $http.get('/api/dirList/' + path);
+  fileFactory.getAvailableDirectories = function (rootDir) {
+    return $http.get('/api/dirList/' + rootDir);
   }
 
   /*
