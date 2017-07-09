@@ -14,7 +14,7 @@ myApp.factory('FileService', ['$http', function ($http) {
    */
   fileFactory.getAvailableDirectories = function (rootDir) {
     return $http.get('/api/dirList/' + rootDir);
-  }
+  };
 
   /*
    * Upload file to server
